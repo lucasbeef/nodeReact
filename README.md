@@ -7,11 +7,8 @@
 ![type](https://media.giphy.com/media/RRerwvHrb0nxm/giphy.gif)
 
 ## Instructions
-
-**Sans le forker**, clone le projet sur ton ordinateur.
-
-Crée ensuite une branche.
-A la fin du test, il faudra faire un **push de cette branche** sur le remote. 
+Forker le repo.
+A la fin du test, il faire une *PR**. 
 
 Le dépôt contient les répertoires suivants:
 * `front/` : Le projet en React (généré _via_ `create-react-app`)
