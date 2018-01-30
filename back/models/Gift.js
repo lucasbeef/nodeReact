@@ -1,5 +1,7 @@
-const Gift = {
-    
-}; 
+const Sequelize = require('sequelize');
 
-module.exports = Gift;
+module.exports = function(sequelize) {
+  return sequelize.define('gift', {
+    name: Sequelize.STRING
+  });
+}
