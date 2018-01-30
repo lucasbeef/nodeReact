@@ -5,7 +5,8 @@ const Gifts = require('../controllers/Gifts');
 router
   .route('/')
   .get(Gifts.read)
-  .post(Gifts.create)
-  .delete(Gifts.delete);
+  .post(Gifts.create);
+  
+router.delete('/:giftId', Gifts.delete);
 
 module.exports = router;

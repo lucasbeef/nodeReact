@@ -21,10 +21,10 @@ const Gifts = {
     },
     delete: (req, res, next) => {
       Gift.destroy({
-        "where": { "id": req.body.id }
+        "where": { "id": req.params.giftId }
       })
       .then((nbRowsDeleted) => {
-        res.json({"id": req.body.id})
+        res.json({"id": req.params.giftId})
       })
       .catch((error) => {console.log(error)});
     },
