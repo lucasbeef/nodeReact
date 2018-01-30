@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
-import Gift from './Gift';
+import GiftsWrapper from './GiftsWrapper';
 import logo from './logo.png';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      gifts: []
-    };
-
-    this.removeGift = this.removeGift.bind(this);
-  }
-
-  removeGift() {
-
   }
 
   render() {
@@ -28,18 +18,7 @@ class App extends Component {
 
         <img src="https://media.giphy.com/media/JltOMwYmi0VrO/giphy.gif" />
 
-        <form>
-          <input type="text" />
-          <button type="submit"> Ajouter </button>
-        </form>
-
-        <div className="GiftWrapper">
-          <Gift name="Ferrari LaFerrari" remove={this.removeGift} />
-          <Gift name="Palace en Espagne" remove={this.removeGift} />
-        </div>
-
-        <button type="button" className="mail"> Dear Santa Florian, send me my gifts</button>
-
+        <GiftsWrapper />
       </div>
     );
   }

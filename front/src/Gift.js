@@ -3,13 +3,13 @@ import './Gift.css';
 
 class Gift extends Component {
   constructor(props){
-    super(props); 
+    super(props);
   }
 
   render() {
     return (
       <div className="Gift">
-        UN SUPER CADEAU
+        {this.props.name}
         <button className="remove">X</button>
       </div>
     );
