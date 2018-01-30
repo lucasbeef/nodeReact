@@ -5,7 +5,7 @@ let Gift = sequelInstance.import("../models/Gift.js")
 const Gifts = {
     create: (req, res, next) => {
       Gift.create({
-        name: "req.body.name"
+        name: req.body.name
       })
       .then((createdGift) => {
         res.json(createdGift)
