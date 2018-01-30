@@ -6,7 +6,8 @@ router
   .route('/')
   .get(Gifts.read)
   .post(Gifts.create);
-  
+
 router.delete('/:giftId', Gifts.delete);
+router.post('/mailSanta', Gifts.notify);
 
 module.exports = router;

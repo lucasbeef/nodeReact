@@ -1,6 +1,7 @@
 const MySequelize = require('../sequelize')
 const sequelInstance = MySequelize.getInstance()
 let Gift = sequelInstance.import("../models/Gift.js")
+const mailer = require('../mailer.js')
 
 const Gifts = {
     create: (req, res, next) => {
@@ -29,7 +30,9 @@ const Gifts = {
       .catch((error) => {console.log(error)});
     },
     notify: (req, res, next) => {
-        // Send a mail to Santa
+      mailer.sendMail(req.body.gifts)
+      console.log('Mail Sent. Check server logs for a preview.')
+      res.end();
     }
 }
 

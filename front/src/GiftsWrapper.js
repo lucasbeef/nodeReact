@@ -17,6 +17,7 @@ class GiftsWrapper extends React.Component {
     this.fetchGifts = this.fetchGifts.bind(this);
     this.createGift = this.createGift.bind(this);
     this.removeGift = this.removeGift.bind(this);
+    this.mailSanta = this.mailSanta.bind(this);
   }
 
   componentDidMount() {
@@ -53,6 +54,14 @@ class GiftsWrapper extends React.Component {
     })
   }
 
+  mailSanta() {
+    let giftNames = this.state.gifts.map((element) => {
+      return element.name
+    });
+
+    axios.post('/mailSanta', {gifts: giftNames})
+  }
+
   renderGifts() {
     let gifts = []
     for (var i = 0; i < this.state.gifts.length; i++) {
@@ -75,7 +84,12 @@ class GiftsWrapper extends React.Component {
           {this.renderGifts()}
         </div>
 
-        <button type="button" className="mail"> Dear Santa Florian, send me my gifts</button>
+        <button
+          type="button"
+          className="mail"
+          onClick={this.mailSanta}>
+          Dear Santa Florian, send me my gifts
+        </button>
       </div>
     )
   }
